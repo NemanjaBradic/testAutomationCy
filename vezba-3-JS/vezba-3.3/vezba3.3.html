@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Javascript Scope promenljivih</h2>
+        <p id="elem1">Primer malo duzeg teksta.</p>
+        <p id="elem2">321</p>
+        <p id="elem3"> <br> ... dodatak teksta</p>
+        <p id="elem4">100</p>
+        <p id="elem5"></p>
+        <p id="elem6"></p>
+        <script>
+            let tekst1 = document.getElementById("elem1").innerHTML;
+            let broj1 = Number(document.getElementById("elem2").innerHTML);            
+            document.getElementById("elem5").innerHTML = "Rezultat spajanja je: " + nadovezi(tekst1)
+            document.getElementById("elem6").innerHTML = "Rezultat dodavanja je: " + dodaj(broj1)
+            function nadovezi(parametar){ 
+                let tekst2 = document.getElementById("elem3").innerHTML;
+                return tekst2 + " + " + parametar;
+            }
+            function dodaj(parametar){
+                let broj2 = Number(document.getElementById("elem4").innerHTML);
+                return parametar + broj2;
+            }
+        </script>
+    </body>
+</html>

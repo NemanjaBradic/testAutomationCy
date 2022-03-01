@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Javascript petlje</h2>
+        <p id="elem1"></p>
+        <p id="elem2"></p>
+        <hr>
+        <p id="elem3"></p>
+        <p id="elem4"></p>
+        <script>
+            let niz = [1, 54, 12, 78, 63, 25];
+            document.getElementById("elem1").innerHTML = niz;
+            document.getElementById("elem2").innerHTML = funkcija(niz);
+            document.getElementById("elem3").innerHTML = niz.sort();
+            document.getElementById("elem4").innerHTML = funkcija(niz.sort());
+            function funkcija(niz){
+                let tekst = "";
+                for(let i = 0; i < niz.length; i++){
+                    tekst = tekst + niz[i] + "<br>";
+                }
+                return tekst;
+            }
+        </script>
+    </body>
+</html>

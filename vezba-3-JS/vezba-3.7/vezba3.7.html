@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Javascript DOM</h2>
+    
+    <p>Tekst u prvom paragrafu.</p>
+    <h3>Aktuelno</h3>
+    <p id="second">Ovo je tekst pod temom aktuelno.</p>
+
+    <h3>Dodatna sekcija</h3>
+    <input type="button" id="btnClick" value="Click Me!!" />
+    
+    <script>
+	    let paragraphs = document.getElementsByTagName("p");
+        alert("Sadrzaj drugog paragrafa je:  " + paragraphs[1].innerHTML);
+        document.getElementById("second").innerHTML = "Promena teme";
+
+        document.getElementById("btnClick").addEventListener("click", clicked);
+        function clicked(){
+   		    alert("You clicked me!!!");
+        }	
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2> Javascript promenljive</h2>
+        <p id="tekstID"></p>
+        <p id="numberID"></p>
+        <p id="tacnoID"></p>
+        
+        <p id="pageID"></p>
+        
+        <script>
+            let tekst = "Tekst ili string u javascript-u";
+            let number = 5;
+            let tacno = true;
+            let prazno = null;
+            let nedefinisan = undefined;
+            let simbol = Symbol('Simbolican tekst')
+            let objekat = { 
+                kljuc1: tekst,
+                kljuc2: number
+            };
+            let niz = ["text", false, 12, "Nesto", 87];
+            function funkcija() {}
+
+            document.getElementById("tekstID").innerHTML = tekst;
+            document.getElementById("numberID").innerHTML = number;
+            document.getElementById("tacnoID").innerHTML = tacno;
+            document.getElementById("pageID").innerHTML = 
+                "Tekst: " + typeof tekst + "<br>" + 
+                "Number: " + typeof number + "<br>" +
+                "Not a number: " + typeof NaN + "<br>" +
+                "Niz: " + typeof niz + "<br>" +
+                "Boolean: " + typeof tacno + "<br>" +
+                "Objekat: " + typeof objekat + "<br>" +
+                "Funkcija: " + typeof funkcija + "<br>" +
+                "Date: " + typeof new Date() + "<br>" +
+                "Null: " + typeof null;
+        </script>
+    </body>
+</html>

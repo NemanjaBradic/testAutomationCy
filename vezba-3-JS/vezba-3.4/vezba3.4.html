@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Javascript operatori</h2>
+        <h3>Aritmeticki operatori</h3>
+        <p id="item1"></p>
+        <p id="item2"></p>
+        <hr>
+        <h3>Logicki operatori</h3>
+        <p id="item3"></p>
+        <p id="item4"></p>
+        <hr>
+        <h3>Operatori poredjenja</h3>
+        <p id="item5"></p>
+        <p id="item6"></p>
+        <p id="item7"></p>
+        <p id="item8"></p>
+        <p id="item9"></p>
+        <p id="item10"></p>
+        <hr>
+        <h3>Operatori inc i dec</h3>
+        <p id="item11"></p>
+        <p id="item12"></p>
+        <p id="item13"></p>
+        <p id="item14"></p>
+        <script>
+            let x = 125, y = 40, z = 2;
+            document.getElementById("item1").innerHTML = "Operator %: " + x % y;
+            document.getElementById("item2").innerHTML = "Operator **: " + y ** z;
+            document.getElementById("item3").innerHTML = "Operator ||: " + (true || false);
+            document.getElementById("item4").innerHTML = "Operator &&: " + (true && false);
+            document.getElementById("item5").innerHTML = "Operator ===: " + (x === "125");
+            document.getElementById("item6").innerHTML = "Operator ==: " + (x == "125");
+            document.getElementById("item7").innerHTML = "Operator >=: " + (x >= y);
+            document.getElementById("item8").innerHTML = "Operator <=: " + (x <= y);
+            document.getElementById("item9").innerHTML = "Operator !==: " + (x !== "125");
+            document.getElementById("item10").innerHTML = "Operator !=: " + (x != "125");
+            document.getElementById("item11").innerHTML = "Operator x++: " + x++;
+            document.getElementById("item12").innerHTML = "Operator x--: " + x--;
+            document.getElementById("item13").innerHTML = "Operator ++y: " + ++y;
+            document.getElementById("item14").innerHTML = "Operator --y: " + --y;
+        </script>
+    </body>
+</html>

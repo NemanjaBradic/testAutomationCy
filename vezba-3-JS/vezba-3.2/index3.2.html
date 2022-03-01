@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2> Javascript funkcije</h2>
+        
+        <p id="element1Id"></p>
+        <p id="element2Id"></p>
+        <p id="element3Id"></p>
+
+        <p id="elemA"> 10 </p>
+        <p id="elemB"> 50 </p>
+        
+        <p id="element4Id"></p>
+        <script>
+            let x =45;
+            let y =23;
+            let a = Number(document.getElementById("elemA").innerHTML);
+            let b = Number(document.getElementById("elemB").innerHTML);
+            let tekst1 = "Pocetak teksta ...";
+            let tekst2 = "... kraj teksta."
+            document.getElementById("element1Id").innerHTML = "Zbir je: " + saberi() 
+            document.getElementById("element2Id").innerHTML = "Razlika je: " + oduzmi()
+            document.getElementById("element3Id").innerHTML = "Tekst je: " + "<br>" + nadovezi()
+            document.getElementById("element4Id").innerHTML = "Rezultat mnozenja je: " + pomnozi(a,b) 
+            function saberi(){ return x + y}
+            function oduzmi(){ return x - y}
+            function nadovezi(){ return tekst1 + "<br>" + tekst2}
+            function pomnozi(a,b){ return a * b}
+        </script>
+    </body>
+</html>

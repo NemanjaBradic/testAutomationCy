@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Javascript Konstruktori</h2>
+        <p id="elem1"></p>
+        <p id="elem2"></p>
+        <script>
+               
+            function Car(marka, model, godina){
+                this.marka = marka;
+                this.model = model;
+                this.godina = godina;
+
+                this.setKilometraza = function(kilometraza){
+                    this.kilometri = kilometraza;
+                    return kilometraza
+                }
+            }
+
+            let car1 = new Car ("Yugo", "45", 1990);
+            let car2 = new Car ("Toyota", "Yaris", 2010);
+
+            Car.prototype.age = function(){
+                return (new Date().getFullYear() - this.godina)
+            }
+            document.getElementById("elem1").innerHTML = 
+            "Automobil marke: " + car1.marka + ", model: " + car1.model + " je starosti: " + car1.age() + "godine"
+            document.getElementById("elem2").innerHTML = 
+            "Automobil marke: " + car2.marka + ", model: " + car2.model + " je starosti: " + car2.age() + "godine"
+        </script>
+    </body>
+</html>

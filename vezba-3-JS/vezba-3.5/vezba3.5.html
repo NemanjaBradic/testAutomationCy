@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Javascript grananja</h2>
+        <p id="lok1">100</p>
+        <p id="lok2">200</p>
+        <p id="lok3"></p>
+        <p id="lok4"></p>
+        <script>
+            let x = document.getElementById("lok1").innerHTML;
+            let y = document.getElementById("lok2").innerHTML;
+            document.getElementById("lok3").innerHTML = uporedi2()
+            document.getElementById("lok4").innerHTML = uporediSve(100)
+            function uporedi2(){
+                if (x <= y) return "X je manje ili jednako od Y.";
+                else return "X je vece od Y."
+            }
+            function uporediSve(a){
+                switch(a){
+                    case 100:
+                        return "Izabrali ste X."
+                    case 200:
+                        return "Izabrali ste Y."
+                    default:
+                        return "Izaberite ponovo."
+                }
+            }
+        </script>
+    </body>
+</html>
