@@ -6,16 +6,23 @@
     <p>Tekst u prvom paragrafu.</p>
     <h3>Aktuelno</h3>
     <p id="second">Ovo je tekst pod temom aktuelno.</p>
+    <p class="selektor"> Ovaj tekst je klasa za sebe.</p>
 
     <h3>Dodatna sekcija</h3>
     <input type="button" id="btnClick" value="Click Me!!" />
-    
+
+    <p class="rezultat1"></p>
     <script>
 	    let paragraphs = document.getElementsByTagName("p");
         alert("Sadrzaj drugog paragrafa je:  " + paragraphs[1].innerHTML);
         document.getElementById("second").innerHTML = "Promena teme";
 
         document.getElementById("btnClick").addEventListener("click", clicked);
+        document.querySelector("p.selektor").style.backgroundColor = "green";
+        const nodeList = document.querySelectorAll("p");
+        nodeList[1].style.color = "red";
+        const collection = document.getElementsByTagName("*");
+        document.getElementsByClassName("rezultat1").innerHTML = "Izabrani element je: " + collection[3];
         function clicked(){
    		    alert("You clicked me!!!");
         }	
