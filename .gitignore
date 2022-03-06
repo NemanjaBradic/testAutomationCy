@@ -1,0 +1,7 @@
+node_modules
+aws-exports-es5.js
+.husky/_/husky.sh
+.nyc_output/a0e03e23-21b7-4ba1-a982-a5a95298aaf6.json
+.nyc_output/processinfo/a0e03e23-21b7-4ba1-a982-a5a95298aaf6.json
+.nyc_output/processinfo/index.json
+src/aws-exports.js
