@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Javascript keyword this</h2>
+        <p id="item1"></p>
+        <p id="item2"></p>
+        <p id="item3"></p>
+        <script>
+            let ime = "Petar";
+
+            function ovoIme(){
+                return this.ime;
+            }
+
+            const korisnik = {
+                ime: "Milan",
+                datunRodjenja: 1995,
+                izracunajStarost: function() {
+                    const trenutnaGodina = (new Date()).getFullYear();
+                    return trenutnaGodina - this.datunRodjenja;
+                }
+            }
+
+            document.getElementById("item1").innerHTML = ovoIme();
+            document.getElementById("item2").innerHTML = korisnik.izracunajStarost();
+            document.getElementById("item3").innerHTML = ovoIme.call(korisnik);
+        </script>
+    </body>
+</html>

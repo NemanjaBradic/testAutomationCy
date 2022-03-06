@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Javascript supported functions - arrays</h2>
+
+        <p id="elem1"></p>
+        <p id="elem2"></p>
+        <p id="elem3"></p>
+        <p id="elem4"></p>
+        <p id="elem5"></p>
+        <p id="elem6"></p>
+        <p id="elem7"></p>
+        <p id="elem8"></p>
+        <p id="elem9"></p>
+        <p id="elem10"></p>
+        <p id="elem11"></p>
+        <p id="elem12"></p>
+        <p id="elem13"></p>
+        <p id="elem14"></p>
+        <p id="elem15"></p>
+        <script>
+            const niz1 = [55, 45, 65, 95, 35, 75, 15, 85, 25, 45];
+            const niz2 = [16, 512, 32, 8, 64, 4, 128, 1024, 256];
+            const niz3 = ["cat", "mouse", "dog", "cow", "lamb", "chicken"]; 
+            const objekat = {};
+            let ukupnaSuma = 0;
+
+            document.getElementById("elem1").innerHTML = "Concat(): " + niz1.concat(niz2);
+            document.getElementById("elem2").innerHTML = "every(): " + niz1.every(deljivSaPet);
+            document.getElementById("elem3").innerHTML = "filter(): " + niz2.filter(isThreeDigit);
+            document.getElementById("elem4").innerHTML = "find(): " + niz2.find(isSingleDigit);
+            document.getElementById("elem5").innerHTML = "findIndex(): " + niz2.findIndex(isSingleDigit);
+            niz1.forEach(saberiSve);
+            document.getElementById("elem6").innerHTML = "forEach(): " + ukupnaSuma;
+            document.getElementById("elem7").innerHTML = "Array.isArray(): " + Array.isArray(objekat);
+            document.getElementById("elem8").innerHTML = "join(): " + niz3.join(" and ");
+            document.getElementById("elem9").innerHTML = "pop(): " + niz2.pop();
+            document.getElementById("elem10").innerHTML = "push(): " + niz2.push(2048);
+            document.getElementById("elem11").innerHTML = "slice(): " + niz1.slice(4, 7);
+            document.getElementById("elem12").innerHTML = "shift(): " + niz1.shift();
+            document.getElementById("elem13").innerHTML = "unshift(): " + niz1.unshift(55);
+            document.getElementById("elem14").innerHTML = "sort(): " + niz3.sort();
+            document.getElementById("elem15").innerHTML = "reverse(): " + niz3.reverse();
+            function deljivSaPet(num) {
+                return (num % 5) == 0;
+            }
+            function isThreeDigit(num) {
+                return (num <= 999) && (num >= 100);
+            }
+            function isSingleDigit(num) {
+                return (num < 10) && (num >= 0);
+            }
+            function saberiSve(num) {
+                ukupnaSuma += num;
+            }
+        </script>
+    </body>
+</html>

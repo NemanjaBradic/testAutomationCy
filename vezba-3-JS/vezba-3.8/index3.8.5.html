@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Javascript supported functions - date</h2>
+
+        <p id="elem1"></p>
+        <p id="elem2"></p>
+        <p id="elem3"></p>
+        <p id="elem4"></p>
+        <p id="elem5"></p>
+        <p id="elem6"></p>
+        <p id="elem7"></p>
+        <p id="elem8"></p>
+        <hr>
+        <p id="elem9"></p>
+        <p id="elem10"></p>
+        <p id="elem11"></p>
+        <p id="elem12"></p>
+        <p id="elem13"></p>
+        <p id="elem14"></p>
+        <p id="elem15"></p>
+        <script>
+            const datum = new Date();
+
+            document.getElementById("elem1").innerHTML = "Date.now(): " + Date.now();
+            document.getElementById("elem2").innerHTML = "getDate(): " + datum.getDate();
+            document.getElementById("elem3").innerHTML = "getDay(): " + datum.getDay();
+            document.getElementById("elem4").innerHTML = "getFullYear: " + datum.getFullYear();
+            document.getElementById("elem5").innerHTML = "getMilliseconds(): " + datum.getMilliseconds();
+            document.getElementById("elem6").innerHTML = "getMinutes(): " + datum.getMinutes();
+            document.getElementById("elem7").innerHTML = "getMonth(): " + datum.getMonth();
+            document.getElementById("elem8").innerHTML = "getSeconds(): " + datum.getSeconds();
+            document.getElementById("elem9").innerHTML = "getTime(): " + datum.getTime();
+            document.getElementById("elem10").innerHTML = "toLocaleDateString(): " + datum.toLocaleDateString();
+            document.getElementById("elem11").innerHTML = "toLocaleTimeString(): " + datum.toLocaleTimeString();
+            document.getElementById("elem12").innerHTML = "setTime(): " + datum.setTime(1442403642598);
+            document.getElementById("elem13").innerHTML = "getTime(): " + datum.getTime();
+            document.getElementById("elem14").innerHTML = "toLocaleDateString(): " + datum.toLocaleDateString();
+            document.getElementById("elem15").innerHTML = "toLocaleTimeString(): " + datum.toLocaleTimeString();
+        </script>
+    </body>
+    
+</html>

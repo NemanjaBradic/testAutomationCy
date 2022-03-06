@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html>
+  <style>
+    .class1{
+        background-color: aqua;
+        padding: 8px;
+    }
+    .class2{
+        text-align: right;
+        font-size: larger;
+    }
+    .class3{
+        text-transform: lowercase;
+    }
+</style>
 <body>
     <h2>Javascript DOM</h2>
     
@@ -11,7 +24,18 @@
     <h3>Dodatna sekcija</h3>
     <input type="button" id="btnClick" value="Click Me!!" />
 
-    <p class="rezultat1"></p>
+    <h3 class="element">Naslovni tekst</h3>
+    
+    <div class="element">
+      Tekst unutar div class elementa
+    </div>
+    <br>
+    <p class="element">Tekst unutar paragrafa sa klasom element.</p>
+    <p class="element">Jos jedan paragraf sa klasom element.</p>
+    <hr>
+    <div id="divElem"></div>
+    <div id="brojKlasa"></div>
+    <p id="broj"></p>
     <script>
 	    let paragraphs = document.getElementsByTagName("p");
         alert("Sadrzaj drugog paragrafa je:  " + paragraphs[1].innerHTML);
@@ -21,11 +45,33 @@
         document.querySelector("p.selektor").style.backgroundColor = "green";
         const nodeList = document.querySelectorAll("p");
         nodeList[1].style.color = "red";
-        const collection = document.getElementsByTagName("*");
-        document.getElementsByClassName("rezultat1").innerHTML = "Izabrani element je: " + collection[3];
+        
         function clicked(){
    		    alert("You clicked me!!!");
         }	
+
+        const collection = document.getElementsByTagName("*");
+        document.getElementById("broj") .innerHTML = "Broj elemenata u ovom html-u je: " + collection.length;
+        const nodes = document.getElementsByClassName("element");
+        for(let i = 0; i < nodes.length; i++) {
+          nodes[i].style.backgroundColor = "blue";
+        }
+
+        let div = document.createElement("div");
+        let text1 = document.createTextNode("Some text from the script part of code. ");
+        let text2 = text1.cloneNode();
+        div.textContent = "Adding div element some content text. ";
+        div.appendChild(text1);
+        div.appendChild(text2);
+        let parentDiv = document.getElementById("divElem").parentNode;
+        let nextDiv = document.getElementById("divElem");
+        parentDiv.insertBefore(div, nextDiv);
+        console.log(div.firstChild);
+        console.log(div.lastChild);
+        console.log(text1.parentNode);
+        console.log(div.childNodes);
+        div.classList.add("class1", "class2", "class3")
+        document.getElementById("brojKlasa").innerHTML = "Broj klasa u dodatom div elementu je: " + div.classList.length;
   </script>
 </body>
 </html>

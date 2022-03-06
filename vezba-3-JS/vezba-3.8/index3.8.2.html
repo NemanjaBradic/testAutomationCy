@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Javascript supported functions - numbers</h2>
+
+        <p id="elem1"></p>
+        <p id="elem2"></p>
+        <p id="elem3"></p>
+        <p id="elem4"></p>
+        <p id="elem5"></p>
+        <p id="elem6"></p>
+        <p id="elem7"></p>
+        <p id="elem8"></p>
+        <p id="elem9"></p>
+        <p id="elem10"></p>
+        <script>
+            const broj1 = 123;
+            const broj2 = 789.1212;
+            const broj3 = NaN;
+            const broj4 = 0.002517865;
+
+            document.getElementById("elem1").innerHTML = "isFinite(): " + Number.isFinite(broj1);
+            document.getElementById("elem2").innerHTML = "isInteger(): " + Number.isInteger(broj2);
+            document.getElementById("elem3").innerHTML = "isNaN(): " + Number.isNaN(broj3);
+            document.getElementById("elem4").innerHTML = "isSafeInteger: " + Number.isSafeInteger(broj1);
+            document.getElementById("elem5").innerHTML = "toExponential(): " + broj2.toExponential();
+            document.getElementById("elem6").innerHTML = "toFixed(): " + broj2.toFixed(2);
+            document.getElementById("elem7").innerHTML = "toPrecision(2): " + broj4.toPrecision(2);
+            document.getElementById("elem8").innerHTML = "toPrecision(4): " + broj4.toPrecision(4);
+            document.getElementById("elem9").innerHTML = "toPrecision(8): " + broj4.toPrecision(8);
+            document.getElementById("elem10").innerHTML = "valueOf(): " + broj2.valueOf();
+        </script>
+    </body>
+    
+</html>

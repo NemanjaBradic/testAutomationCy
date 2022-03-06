@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Javascript supported functions - string</h2>
+
+        <p id="elem1"></p>
+        <p id="elem2"></p>
+        <p id="elem3"></p>
+        <p id="elem4"></p>
+        <p id="elem5"></p>
+        <p id="elem6"></p>
+        <p id="elem7"></p>
+        <p id="elem8"></p>
+        <p id="elem9"></p>
+        <p id="elem10"></p>
+        <script>
+            const text1 = 'Prvi primer string-a';
+            const text2 = 'Drugi primer string-a';
+            const text3 = 'Primer  teksta u   kome ima  vise   praznih   karaktera   .  ';
+            const logickaVrednost = true;
+
+            document.getElementById("elem1").innerHTML = "Nadovezivanje: " + text1.concat(' ', text2);
+            document.getElementById("elem2").innerHTML = "toUpperCase(): " +text1.toUpperCase();
+            document.getElementById("elem3").innerHTML = "trim(): " +text3.trim();
+            document.getElementById("elem4").innerHTML = "split(): " +text1.split();
+            document.getElementById("elem5").innerHTML = "slice(): " +text1.slice(5, 11);
+            document.getElementById("elem6").innerHTML = "charAt(): " +text2.charAt(10);
+            document.getElementById("elem7").innerHTML = "indexOf(): " +text2.indexOf("i");
+            document.getElementById("elem8").innerHTML = "lastIndexOf(): " +text2.lastIndexOf("i");
+            document.getElementById("elem9").innerHTML = "Boolean.toString(): " +logickaVrednost.toString();
+            document.getElementById("elem10").innerHTML = "Boolean vrednost: " +logickaVrednost;
+        </script>
+    </body>
+    
+</html>
