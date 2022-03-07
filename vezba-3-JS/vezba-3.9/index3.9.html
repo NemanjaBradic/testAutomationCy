@@ -5,25 +5,31 @@
         <p id="item1"></p>
         <p id="item2"></p>
         <p id="item3"></p>
+        <p id="item4"></p>
         <script>
-            let ime = "Petar";
+            var ime = "Petar";
 
             function ovoIme(){
                 return this.ime;
             }
 
+            function datum(){
+                return this.datumRodjenja;
+            }
+
             const korisnik = {
                 ime: "Milan",
-                datunRodjenja: 1995,
+                datumRodjenja: 1995,
                 izracunajStarost: function() {
                     const trenutnaGodina = (new Date()).getFullYear();
-                    return trenutnaGodina - this.datunRodjenja;
+                    return trenutnaGodina - this.datumRodjenja;
                 }
             }
 
             document.getElementById("item1").innerHTML = ovoIme();
             document.getElementById("item2").innerHTML = korisnik.izracunajStarost();
-            document.getElementById("item3").innerHTML = ovoIme.call(korisnik);
+            document.getElementById("item3").innerHTML = ovoIme.call(korisnik);// korisnik.ovoIme();
+            document.getElementById("item4").innerHTML = datum.call(korisnik);
         </script>
     </body>
 </html>

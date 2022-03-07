@@ -24,9 +24,15 @@
                 return (new Date().getFullYear() - this.godina)
             }
             document.getElementById("elem1").innerHTML = 
-            "Automobil marke: " + car1.marka + ", model: " + car1.model + " je starosti: " + car1.age() + "godine"
+            "Automobil marke: " + car1.marka + ", model: " + car1.model + " je starosti: " + car1.age() + "godine" + ", kilometraze:" + car1.setKilometraza(150);
+            console.log(car1.kilometri);
+            console.log(car1);
             document.getElementById("elem2").innerHTML = 
-            "Automobil marke: " + car2.marka + ", model: " + car2.model + " je starosti: " + car2.age() + "godine"
+            "Automobil marke: " + car2.marka + ", model: " + car2.model + " je starosti: " + car2.age() + "godine";
+            console.log(car2.kilometri);
+            console.log(car2);
+            car1 = 10;
+            console.log(car1);
         </script>
     </body>
 </html>
