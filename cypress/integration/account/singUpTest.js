@@ -7,7 +7,7 @@ describe('SingUp Test suite', function() {
         cy.get('[data-test="signup-title"]').should('have.text', 'Sign Up');
     });
 
-    it('2. Sing up while all fields are not populated', function() {
+    it('2. Click on Sing-up while all fields are not populated', function() {
         //TODO
     });
 
