@@ -1,5 +1,6 @@
 // @ts-check
 ///<reference path="../global.d.ts" />
+/// <reference path="../support/index.d.ts" />
 
 import { pick } from "lodash/fp";
 import { format as formatDate } from "date-fns";
@@ -362,4 +363,14 @@ Cypress.Commands.add("loginByGoogleApi", () => {
       cy.visit("/");
     });
   });
+});
+
+Cypress.Commands.add("loginUser", (username, password) => {
+  cy.get('#username').type(username);
+  cy.get('#password').type(password);
+  cy.get('[data-test="signin-submit"]').click();
+});
+
+Cypress.Commands.add("logoutUser", () =>  {
+  cy.get('[data-test="sidenav-signout"]').click();
 });
