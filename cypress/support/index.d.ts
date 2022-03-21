@@ -8,6 +8,16 @@ declare namespace Cypress {
         /**
          * @example cy.logoutUser()
          */
-         logoutUser(): Chainable<any>;
+        logoutUser(): Chainable<any>;
+
+        /**
+         * @example cy.tabNavigation('tab-selector')
+         */
+        tabNavigation(tab): Chainable<any>;
+
+        /**
+         * @example cy.newTransaction(contact, amount, description, type)
+         */
+        newTransaction(contact, amount, description, type): Chainable<any>;
     }
 }
