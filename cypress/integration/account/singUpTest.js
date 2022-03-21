@@ -1,10 +1,10 @@
 /// <reference types="Cypress" />
 
-beforeEach('Go to application', function(){
-    cy.visit('/')
-});
-
 describe('SingUp Test suite', function() {
+    beforeEach('Go to application', function(){
+        cy.visit('/')
+    });
+
     it('1. Navigate to Sing Up page', function() {
         cy.get('[data-test="signup"]').click();
         cy.get('[data-test="signup-title"]').should('have.text', 'Sign Up');
