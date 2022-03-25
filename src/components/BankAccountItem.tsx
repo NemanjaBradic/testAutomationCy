@@ -13,7 +13,7 @@ const BankAccountListItem: React.FC<BankAccountListItemProps> = ({
   deleteBankAccount,
 }) => {
   return (
-    <ListItem data-test={`bankaccount-list-item-${bankAccount.id}`}>
+    <ListItem id={`bankaccount-list-item-${bankAccount.id}`}>
       <Grid container direction="row" justify="space-between" alignItems="flex-start">
         <Grid item>
           <Typography variant="body1" color="primary" gutterBottom>
@@ -26,7 +26,7 @@ const BankAccountListItem: React.FC<BankAccountListItemProps> = ({
               variant="contained"
               color="secondary"
               size="large"
-              data-test="bankaccount-delete"
+              id="bankaccount-delete"
               onClick={() => {
                 deleteBankAccount({ id: bankAccount.id });
               }}

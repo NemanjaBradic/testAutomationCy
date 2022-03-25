@@ -103,7 +103,6 @@ const SignInForm: React.FC<Props> = ({ authService }) => {
                     label="Username"
                     type="text"
                     autoFocus
-                    data-test="signin-username"
                     error={(touched || value !== initialValue) && Boolean(error)}
                     helperText={touched || value !== initialValue ? error : ""}
                     {...field}
@@ -119,7 +118,6 @@ const SignInForm: React.FC<Props> = ({ authService }) => {
                     label="Password"
                     type="password"
                     id="password"
-                    data-test="signin-password"
                     error={touched && value !== initialValue && Boolean(error)}
                     helperText={touched && value !== initialValue && touched ? error : ""}
                     {...field}
@@ -142,7 +140,6 @@ const SignInForm: React.FC<Props> = ({ authService }) => {
                 variant="contained"
                 color="primary"
                 className={classes.submit}
-                data-test="signin-submit"
                 disabled={!isValid || isSubmitting}
               >
                 Sign In
@@ -152,7 +149,7 @@ const SignInForm: React.FC<Props> = ({ authService }) => {
                   {/*<Link to="/forgotpassword">Forgot password?</Link>*/}
                 </Grid>
                 <Grid item>
-                  <Link data-test="signup" to="/signup">
+                  <Link id="signup" to="/signup">
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>

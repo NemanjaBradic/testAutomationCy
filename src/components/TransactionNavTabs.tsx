@@ -26,7 +26,7 @@ export default function TransactionNavTabs() {
       onChange={handleChange}
       indicatorColor="secondary"
       centered
-      data-test="nav-transaction-tabs"
+      id="nav-transaction-tabs"
     >
       <Tab label="Everyone" component={Link} to="/" data-test="nav-public-tab" />
       <Tab label="Friends" component={Link} to="/contacts" data-test="nav-contacts-tab" />

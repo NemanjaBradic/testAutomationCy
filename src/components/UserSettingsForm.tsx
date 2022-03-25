@@ -138,7 +138,7 @@ const UserSettingsForm: React.FC<UserSettingsProps> = ({ userProfile, updateUser
                 variant="contained"
                 color="primary"
                 className={classes.submit}
-                data-test="user-settings-submit"
+                id="user-settings-submit"
                 disabled={!isValid || isSubmitting}
               >
                 Save

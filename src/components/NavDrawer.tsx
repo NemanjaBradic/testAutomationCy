@@ -42,7 +42,7 @@ export const mainListItems = (
       onClick={() => showTemporaryDrawer && toggleDrawer()}
       component={RouterLink}
       to="/"
-      data-test="sidenav-home"
+      id="sidenav-home"
     >
       <ListItemIcon>
         <HomeIcon />
@@ -55,7 +55,7 @@ export const mainListItems = (
       onClick={() => showTemporaryDrawer && toggleDrawer()}
       component={RouterLink}
       to="/user/settings"
-      data-test="sidenav-user-settings"
+      id="sidenav-user-settings"
     >
       <ListItemIcon>
         <PersonIcon />
@@ -68,7 +68,7 @@ export const mainListItems = (
       onClick={() => showTemporaryDrawer && toggleDrawer()}
       component={RouterLink}
       to="/bankaccounts"
-      data-test="sidenav-bankaccounts"
+      id="sidenav-bankaccounts"
     >
       <ListItemIcon>
         <AccountBalanceIcon />
@@ -81,7 +81,7 @@ export const mainListItems = (
       onClick={() => showTemporaryDrawer && toggleDrawer()}
       component={RouterLink}
       to="/notifications"
-      data-test="sidenav-notifications"
+      id="sidenav-notifications"
     >
       <ListItemIcon>
         <NotificationsIcon />
@@ -93,7 +93,7 @@ export const mainListItems = (
 
 export const secondaryListItems = (signOutPending: Function) => (
   <div>
-    <ListItem button onClick={() => signOutPending()} data-test="sidenav-signout">
+    <ListItem button onClick={() => signOutPending()} id="sidenav-signout">
       <ListItemIcon>
         <LogoutIcon />
       </ListItemIcon>
@@ -180,7 +180,7 @@ const NavDrawer: React.FC<Props> = ({
 
   return (
     <Drawer
-      data-test="sidenav"
+      id="sidenav"
       variant={showTemporaryDrawer ? "temporary" : "persistent"}
       classes={{
         paper: clsx(classes.drawerPaper, !drawerOpen && classes.drawerPaperClose),
@@ -213,7 +213,7 @@ const NavDrawer: React.FC<Props> = ({
               <Typography
                 variant="subtitle1"
                 color="textPrimary"
-                data-test="sidenav-user-full-name"
+                id="sidenav-user-full-name"
               >
                 {currentUser.firstName} {head(currentUser.lastName)}
               </Typography>
@@ -221,7 +221,7 @@ const NavDrawer: React.FC<Props> = ({
                 variant="subtitle2"
                 color="inherit"
                 gutterBottom
-                data-test="sidenav-username"
+                id="sidenav-username"
               >
                 @{currentUser.username}
               </Typography>
@@ -244,7 +244,7 @@ const NavDrawer: React.FC<Props> = ({
                 variant="h6"
                 color="textPrimary"
                 className={classes.amount}
-                data-test="sidenav-user-balance"
+                id="sidenav-user-balance"
               >
                 {currentUser.balance ? formatAmount(currentUser.balance) : formatAmount(0)}
               </Typography>

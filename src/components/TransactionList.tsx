@@ -67,7 +67,7 @@ const TransactionList: React.FC<TransactionListProps> = ({
             <Grid item>
               {showCreateButton && (
                 <Button
-                  data-test="transaction-list-empty-create-transaction-button"
+                  id="transaction-list-empty-create-transaction-button"
                   variant="contained"
                   color="primary"
                   component={RouterLink}

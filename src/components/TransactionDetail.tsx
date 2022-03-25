@@ -94,7 +94,7 @@ const TransactionDetail: React.FC<TransactionProps> = ({
         variant="h6"
         color="primary"
         gutterBottom
-        data-test="transaction-detail-header"
+        id="transaction-detail-header"
       >
         Transaction Detail
       </Typography>
@@ -103,17 +103,17 @@ const TransactionDetail: React.FC<TransactionProps> = ({
         direction="row"
         justify="space-between"
         alignItems="center"
-        data-test={`transaction-item-${transaction.id}`}
+        id={`transaction-item-${transaction.id}`}
       >
         <Grid item className={classes.headline}>
           <AvatarGroup className={classes.avatarGroup} max={2}>
             <Avatar
-              data-test="transaction-sender-avatar"
+              id="transaction-sender-avatar"
               className={classes.avatarLarge}
               src={transaction.senderAvatar}
             />
             <Avatar
-              data-test="transaction-receiver-avatar"
+              id="transaction-receiver-avatar"
               className={classes.avatarLarge}
               src={transaction.receiverAvatar}
             />
@@ -128,7 +128,7 @@ const TransactionDetail: React.FC<TransactionProps> = ({
                 variant="body2"
                 color="textSecondary"
                 gutterBottom
-                data-test="transaction-description"
+                id="transaction-description"
               >
                 {transaction.description}
               </Typography>
@@ -142,7 +142,7 @@ const TransactionDetail: React.FC<TransactionProps> = ({
       <Grid container direction="row" justify="flex-start" alignItems="center" spacing={2}>
         <Grid item>
           <Grid container direction="row" justify="flex-start" alignItems="center" spacing={2}>
-            <Grid item data-test={`transaction-like-count-${transaction.id}`}>
+            <Grid item id={`transaction-like-count-${transaction.id}`}>
               {transaction.likes ? transaction.likes.length : 0}{" "}
             </Grid>
             <Grid item>
@@ -150,7 +150,7 @@ const TransactionDetail: React.FC<TransactionProps> = ({
                 color="primary"
                 disabled={currentUserLikesTransaction(currentUser, transaction)}
                 onClick={() => transactionLike(transaction.id)}
-                data-test={`transaction-like-button-${transaction.id}`}
+                id={`transaction-like-button-${transaction.id}`}
               >
                 <LikeIcon />
               </IconButton>

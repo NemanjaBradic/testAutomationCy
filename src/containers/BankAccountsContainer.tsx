@@ -69,7 +69,7 @@ const BankAccountsContainer: React.FC<Props> = ({ authService, bankAccountsServi
             size="large"
             component={RouterLink}
             to="/bankaccounts/new"
-            data-test="bankaccount-new"
+            id="bankaccount-new"
           >
             Create
           </Button>
