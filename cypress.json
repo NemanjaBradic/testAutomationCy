@@ -16,8 +16,8 @@
       "url": "http://localhost:3001/__coverage__"
     }
   },
-  "defaultCommandTimeout": 4000,
-  "requestTimeout": 5000,
+  "defaultCommandTimeout": 8000,
+  "requestTimeout": 6000,
   "responseTimeout": 30000,
   "experimentalStudio": true
 }

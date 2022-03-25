@@ -27,7 +27,7 @@ describe('API test suite', function() {
           });
     });
 
-    it.only('Get transactions', function() {
+    it('Get transactions', function() {
         cy.request("GET", `${baseURL}/transactions`).then((response) => {
             expect(response.status).to.eq(200);
             console.log(response.body);

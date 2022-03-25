@@ -16,6 +16,9 @@ describe('Main Page suite', function() {
     ]
     beforeEach('Visit our application.', function () {
         cy.visit('/');
+        //cy.fixture('/public-transactions.json').as('publicTransaction')
+        cy.intercept('GET', 'http://localhost:3001/notifications').as('notification')
+        //cy.intercept('GET', 'http://localhost:3001/notifications', []).as('notification2')
     });
 
     it('Navigate to Notification page', function () {  
@@ -39,6 +42,7 @@ describe('Main Page suite', function() {
         let notificationNum;
         cy.loginUser('Katharina_Bernier', 's3cret')
         cy.wait(7000)
+        //cy.wait('@notification')
         cy.get('[data-test="nav-top-notifications-count"]')
           .find('span')
           .then((value) =>{
@@ -46,6 +50,7 @@ describe('Main Page suite', function() {
           }).then(()=>{
                 cy.get('[data-test="nav-top-notifications-link"]').click().then(() => {
                     cy.get('.MuiPaper-root > .MuiTypography-h6').should('have.text', 'Notifications')
+                    cy.wait('@notification2')
                     cy.get('[data-test="notifications-list"]').children().then((item) => {
                         expect(item.length).to.be.eq(Number(notificationNum));
                         for(let i = 0; i < item.length; i++){
