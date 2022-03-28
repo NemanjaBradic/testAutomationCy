@@ -6,18 +6,22 @@ describe('SingUp Test suite', function() {
     });
 
     it('1. Navigate to Sing Up page', function() {
-        cy.get('[data-test="signup"]').click();
+        cy.get('#signup').click();
+        //cy.get('[data-test="signup"]').click();
         cy.get('[data-test="signup-title"]').should('have.text', 'Sign Up');
     });
 
     it('2. Click on Sing-up while all fields are not populated', function() {
-        cy.get('[data-test="signup"]').click();
-        cy.get('[data-test="signup-submit"]').click();
+        cy.get('#signup').click();
+        //cy.get('[data-test="signup"]').click();
+        cy.get('[type="submit"]').click()
+        //cy.get('[data-test="signup-submit"]').click();
         cy.get('#firstName-helper-text').should('have.text','First Name is required');
     });
 
     it('3. Check if all sign up fields are mandatory and have proper error message', function() {
-        cy.get('[data-test="signup"]').click();
+        cy.get('#signup').click();
+        //cy.get('[data-test="signup"]').click();
         cy.get('#firstName').focus().blur()
         cy.get('#firstName-helper-text').should('have.text','First Name is required');
         cy.get('#lastName').focus().blur()
@@ -31,17 +35,20 @@ describe('SingUp Test suite', function() {
     });
 
     it('4. Populate all sign up fields and Sing Up button should be enabled', function() {
-        cy.get('[data-test="signup"]').click();
+        cy.get('#signup').click();
+        //cy.get('[data-test="signup"]').click();
         cy.get('#firstName').type('automated')
         cy.get('#lastName').type('testing')
         cy.get('#username').type('testUser')
         cy.get('#password').type('testPassword')
         cy.get('#confirmPassword').type('testPassword')
-        cy.get('[data-test="signup-submit"]').should('not.be.disabled')
+        cy.get('[type="submit"]').should('not.be.disabled')
+        //cy.get('[data-test="signup-submit"]').should('not.be.disabled')
     });
 
     it('5. Navigate back to Sign In page', function() {
-        cy.get('[data-test="signup"]').click();
+        cy.get('#signup').click();
+        //cy.get('[data-test="signup"]').click();
         cy.get('.MuiGrid-root > a').click();
         cy.get('[class="MuiTypography-root MuiTypography-h5"]').contains('Sign in');
     });

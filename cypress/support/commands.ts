@@ -368,7 +368,8 @@ Cypress.Commands.add("loginByGoogleApi", () => {
 Cypress.Commands.add("loginUser", (username, password) => {
   cy.get('#username').type(username);
   cy.get('#password').type(password);
-  cy.get('[data-test="signin-submit"]').click();
+  cy.get('[type="submit"]').click();
+  //cy.get('[data-test="signin-submit"]').click();
 });
 
 Cypress.Commands.add("logoutUser", () =>  {
@@ -384,14 +385,17 @@ Cypress.Commands.add("tabNavigation", (tab) => {
 });
 
 Cypress.Commands.add("newTransaction", (contact, amount, description, type) => {
-  cy.get('[data-test="nav-top-new-transaction"]').click()
+  cy.get('#nav-top-new-transaction').click()
+  //cy.get('[data-test="nav-top-new-transaction"]').click()
   cy.wait(2000);
   cy.get(contact).click()
   cy.get('#amount').type(amount)
   cy.get('#transaction-create-description-input').type(description)
   if(type === 'request'){
-    cy.get('[data-test="transaction-create-submit-request"]').click()
+    cy.get('button').find('span').contains('Request').click()
+    //cy.get('[data-test="transaction-create-submit-request"]').click()
   }else if(type === 'payment'){
-    cy.get('[data-test="transaction-create-submit-payment"]').click()
+    cy.get('button').find('span').contains('Pay').click()
+    //cy.get('[data-test="transaction-create-submit-payment"]').click()
   }
 })
