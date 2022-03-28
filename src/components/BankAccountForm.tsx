@@ -67,7 +67,7 @@ const BankAccountForm: React.FC<BankAccountFormProps> = ({
       }}
     >
       {({ isValid, isSubmitting }) => (
-        <Form className={classes.form} >
+        <Form className={classes.form} data-test="bankaccount-form">
           <Field name="bankName">
             {({ field, meta: { error, value, initialValue, touched } }: FieldProps) => (
               <TextField
