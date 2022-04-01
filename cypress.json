@@ -14,6 +14,14 @@
     "coverage": false,
     "codeCoverage": {
       "url": "http://localhost:3001/__coverage__"
+    },
+    "user1": {
+      "username": "Katharina_Bernier",
+      "password": "s3cret"
+    },
+    "user2": {
+      "username": "test",
+      "password": "test123"
     }
   },
   "defaultCommandTimeout": 8000,
