@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
-
-import { eq } from "lodash";
+import { mainHeader, mainNavigation } from '../../support/pom_objects/HeaderNavigationPage'
+import { NotificationPage } from '../../support/pom_objects/NotificationPage'
 
 describe('Main Page suite', function() {
     
@@ -23,9 +23,9 @@ describe('Main Page suite', function() {
 
     it('Navigate to Notification page', function () {  
         cy.loginUser('Katharina_Bernier', 's3cret')
-        cy.get('[data-test="sidenav-notifications"]').click().then(() => {
-            cy.get('.MuiPaper-root > .MuiTypography-h6').should('have.text', 'Notifications')
-            cy.get('[data-test="notifications-list"]').children().then((item) => {
+        cy.get(mainNavigation.notifications).click().then(() => {
+            cy.get(NotificationPage.notificationTitle).should('have.text', 'Notifications')
+            cy.get(NotificationPage.notificationList).children().then((item) => {
                 for(let i = 0; i < item.length; i++){
                     cy.get('li')
                       .eq(i)
@@ -43,15 +43,15 @@ describe('Main Page suite', function() {
         cy.loginUser('Katharina_Bernier', 's3cret')
         cy.wait(7000)
         //cy.wait('@notification')
-        cy.get('[data-test="nav-top-notifications-count"]')
+        cy.get(mainHeader.notificationCount)
           .find('span')
           .then((value) =>{
             notificationNum = value[0].innerText;
           }).then(()=>{
-                cy.get('[data-test="nav-top-notifications-link"]').click().then(() => {
-                    cy.get('.MuiPaper-root > .MuiTypography-h6').should('have.text', 'Notifications')
-                    cy.wait('@notification2')
-                    cy.get('[data-test="notifications-list"]').children().then((item) => {
+                cy.get(mainHeader.notificationLink).click().then(() => {
+                    cy.get(NotificationPage.notificationTitle).should('have.text', 'Notifications')
+                    //cy.wait('@notification2')
+                    cy.get(NotificationPage.notificationList).children().then((item) => {
                         expect(item.length).to.be.eq(Number(notificationNum));
                         for(let i = 0; i < item.length; i++){
                             cy.get('li')
