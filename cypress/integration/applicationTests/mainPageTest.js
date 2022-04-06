@@ -51,7 +51,7 @@ describe('Main Page suite', function() {
       cy.logoutUser()
     });
 
-    it.only('Filter by Amount', function() {
+    it('Filter by Amount', function() {
       //let min = 90, max = 180
       cy.loginUser(user1.username, user1.password);
       cy.get('[data-test="transaction-amount-183VHWyuQMS"]').should('be.visible')
@@ -63,7 +63,7 @@ describe('Main Page suite', function() {
       cy.logoutUser()
     });
 
-    it('HIde and show options', function() {
+    it('Hide and show options', function() {
       cy.loginUser(user1.username, user1.password);
       cy.get('[data-test="sidenav-toggle"]').click()
       cy.get('[data-test="sidenav-home"] > .MuiListItemText-root > .MuiTypography-root')

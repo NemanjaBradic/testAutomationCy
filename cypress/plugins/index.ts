@@ -9,6 +9,18 @@ import codeCoverageTask from "@cypress/code-coverage/task";
 dotenv.config({ path: ".env.local" });
 dotenv.config();
 
+const cucumber = require('cypress-cucumber-preprocessor').default
+const browserify = require("@cypress/browserify-preprocessor");
+
+module.exports = (on) => {
+  const options = {
+    ...browserify.defaultOptions,
+    typescript: require.resolve("typescript"),
+  };
+
+  on('file:preprocessor', cucumber(options))
+}
+
 const awsConfig = require(path.join(__dirname, "../../aws-exports-es5.js"));
 
 export default (on, config) => {
