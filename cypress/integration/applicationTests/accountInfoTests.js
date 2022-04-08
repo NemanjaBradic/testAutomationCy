@@ -1,9 +1,14 @@
 /// <reference types="Cypress" />
+import { mainNavigation } from '../../support/pom_objects/HeaderNavigationPage'
+import { accountPage } from '../../support/pom_objects/myAccountPage'
+import { accountInfo1, accountInfo2, myAccountTitle} from '../../fixtures/constAccount'
+
+const user1 = Cypress.env("user1");
 
 describe.only('My Account information suite', function(){
     before('Go to application', function(){
       cy.visit('/')
-      cy.loginUser('Katharina_Bernier', 's3cret')
+      cy.loginUser(user1.username, user1.password)
       Cypress.Cookies.preserveOnce('connect.sid')
     });
 
@@ -12,25 +17,25 @@ describe.only('My Account information suite', function(){
     });
 
     it('My account navigation', function(){
-      //cy.loginUser('Katharina_Bernier', 's3cret')
-      cy.get('[data-test="sidenav-user-settings"]').click()
-      cy.get('.MuiPaper-root > .MuiTypography-root').should('have.text', 'User Settings')
-      cy.get('[data-test="user-settings-firstName-input"]').should('have.value', 'Edgar')
-      cy.get('[data-test="user-settings-lastName-input"]').should('have.value', 'Johns')
-      cy.get('[data-test="user-settings-email-input"]').should('have.value', 'Norene39@yahoo.com')
-      cy.get('[data-test="user-settings-phoneNumber-input"]').should('have.value', '625-316-9882')
-      cy.get('[data-test="user-settings-submit"]').should('be.enabled')
+      //cy.loginUser('Katharina_Bernier', 's3cret')'
+      cy.get(mainNavigation.myAccount).click()
+      cy.get(accountPage.title).should('have.text', myAccountTitle)
+      cy.get(accountPage.firstName).should('have.value', accountInfo1.firstName)
+      cy.get(accountPage.lastName).should('have.value', accountInfo1.lastName)
+      cy.get(accountPage.email).should('have.value', accountInfo1.email)
+      cy.get(accountPage.phoneNumber).should('have.value', accountInfo1.phoneNumber)
+      cy.get(accountPage.saveButton).should('be.enabled')
     });
 
     it('Change account data', function(){
       //cy.loginUser('Katharina_Bernier', 's3cret')
-      cy.get('[data-test="sidenav-user-settings"]').click()
-      cy.get('.MuiPaper-root > .MuiTypography-root').should('have.text', 'User Settings')
-      cy.get('[data-test="user-settings-firstName-input"]').clear().type('Test First Name')
-      cy.get('[data-test="user-settings-lastName-input"]').clear().type('QA Last Name')
-      cy.get('[data-test="user-settings-email-input"]').clear().type('testQA@example.com')
-      cy.get('[data-test="user-settings-phoneNumber-input"]').clear().type('123-555-2222')
-      cy.get('[data-test="user-settings-submit"]').should('be.enabled')
+      cy.get(mainNavigation.myAccount).click()
+      cy.get(accountPage.title).should('have.text', myAccountTitle)
+      cy.get(accountPage.firstName).clear().type(accountInfo2.firstName)
+      cy.get(accountPage.lastName).clear().type(accountInfo2.lastName)
+      cy.get(accountPage.email).clear().type(accountInfo2.email)
+      cy.get(accountPage.phoneNumber).clear().type(accountInfo2.phoneNumber)
+      cy.get(accountPage.saveButton).should('be.enabled')
     });
 });
 

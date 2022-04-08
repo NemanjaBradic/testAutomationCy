@@ -10,6 +10,7 @@ const accountInfo = {
 
 const mainNavigation = {
     notifications: '[data-test="sidenav-notifications"]',
+    myAccount: '[data-test="sidenav-user-settings"]',
     signout: '[data-test="sidenav-signout"]'
 }
 
