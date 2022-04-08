@@ -2,6 +2,9 @@
 ///<reference path="../global.d.ts" />
 /// <reference path="../support/index.d.ts" />
 
+import { SignInForm } from '../support/pom_objects/SignInPage'
+import { mainNavigation } from '../support/pom_objects/HeaderNavigationPage'
+
 import { pick } from "lodash/fp";
 import { format as formatDate } from "date-fns";
 import { isMobile } from "./utils";
@@ -366,13 +369,13 @@ Cypress.Commands.add("loginByGoogleApi", () => {
 });
 
 Cypress.Commands.add("loginUser", (username, password) => {
-  cy.get('#username').type(username);
-  cy.get('#password').type(password);
-  cy.get('[data-test="signin-submit"]').click();
+  cy.get(SignInForm.username).type(username);
+  cy.get(SignInForm.password).type(password);
+  cy.get(SignInForm.signIn).click();
 });
 
 Cypress.Commands.add("logoutUser", () =>  {
-  cy.get('[data-test="sidenav-signout"]').click();
+  cy.get(mainNavigation.signout).click();
 });
 
 Cypress.Commands.add("tabNavigation", (tab) => {
