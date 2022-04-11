@@ -33,6 +33,7 @@
     "dinero.js": "1.9.1",
     "formik": "2.2.9",
     "history": "4.10.1",
+    "mocha-allure-reporter": "^1.4.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-google-login": "5.2.2",
@@ -50,6 +51,7 @@
     "@cypress/code-coverage": "3.9.12",
     "@cypress/instrument-cra": "1.4.0",
     "@percy/cypress": "2.3.4",
+    "@shelex/cypress-allure-plugin": "^2.26.5",
     "@types/bcryptjs": "2.4.2",
     "@types/bluebird": "3.5.36",
     "@types/connect-flash": "0.0.37",
@@ -82,6 +84,7 @@
     "@types/validator": "13.7.0",
     "@types/webpack-env": "1.16.3",
     "@types/yup": "0.29.13",
+    "allure-commandline": "^2.17.2",
     "aws-sdk": "2.1043.0",
     "bcryptjs": "2.4.3",
     "concurrently": "6.4.0",
@@ -175,7 +178,12 @@
     "eject": "react-scripts eject",
     "codesandbox:start:api": "yarn tsnode:not-instrumented --files backend/app.ts",
     "codesandbox:start": "NODE_ENV=development TSC_COMPILE_ON_ERROR=true concurrently \"react-scripts start\" yarn:start:api:codesandbox",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "report:allure": "allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "test:cy_spec": "cypress run --spec cypress/integration/firstTest.js --config video=false --env allure=true --reporter mocha-allure-reporter",
+    "test:cy": "cypress run --config video=false --env allure=true --reporter mocha-allure-reporter",
+    "test:allure_spec:": "npm run test:cy_spec && npm run report:allure",
+    "test:allure:": "npm run test:cy && npm run report:allure"
   },
   "eslintConfig": {
     "env": {

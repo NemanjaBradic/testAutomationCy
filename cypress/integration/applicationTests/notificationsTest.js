@@ -2,7 +2,7 @@
 import { mainHeader, mainNavigation } from '../../support/pom_objects/HeaderNavigationPage'
 import { NotificationPage } from '../../support/pom_objects/NotificationPage'
 
-describe('Main Page suite', function() {
+describe('Notifications suite', function() {
     
     const expected = [
         'Ibrahim Dickens liked a transaction.',

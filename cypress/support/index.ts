@@ -1,5 +1,6 @@
 // @ts-check
 import "@cypress/code-coverage/support";
+import '@shelex/cypress-allure-plugin';
 import "./commands";
 import { isMobile } from "./utils";
 

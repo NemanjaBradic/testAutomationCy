@@ -1,3 +1,5 @@
+/// <reference types="@shelex/cypress-allure-plugin" />
+
 import _ from "lodash";
 import path from "path";
 import axios from "axios";
@@ -20,6 +22,12 @@ module.exports = (on) => {
 
   on('file:preprocessor', cucumber(options))
 }
+
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
+
+module.exports = (on, config) => {
+  allureWriter(on, config);
+};
 
 const awsConfig = require(path.join(__dirname, "../../aws-exports-es5.js"));
 
